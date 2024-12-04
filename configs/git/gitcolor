@@ -1,0 +1,120 @@
+# ---------------------------------------------------------------------------------
+# TERMINAL COLOR
+# See also: https://git-scm.com/docs/git-config#Documentation/git-config.txt
+# ---------------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------------
+# BOOLEAN COLOR SETTINGS
+# ---------------------------------------------------------------------------------
+
+[color]
+  advice = always
+  branch = always
+  diff = always
+  grep = always
+  interactive = always
+  pager = true
+  push = always
+  remote = always
+  showBranch = always
+  status = always
+  transport = always
+  ui = always
+
+# ---------------------------------------------------------------------------------
+# SPECIFIC COLOR DEFINITIONS
+# ---------------------------------------------------------------------------------
+
+[color "advice"]
+  hint = magenta
+
+[color "blame"]
+  highlightRecent = blue,12 month ago,white,1 month ago,brightmagenta
+  repeatedLines = brightmagenta
+
+[color "branch"]
+  local = brightblue
+  remote = yellow
+  current = brightblue white bold
+  upstream = brightyellow bold 
+  plain = white bold
+
+[color "decorate"]
+  branch = brightblue bold
+  remoteBranch = brightred
+  tag = brightmagenta bold
+  grafted = blue
+
+[color "decorate.local"]
+  tag = brightmagenta bold
+  stash = magenta
+	HEAD = red
+
+[color "decorate.remoteBranch"]
+  tag = brightmagenta bold
+  stash = magenta
+	HEAD = red
+
+
+[color "diff"]
+  context = white
+  meta = blue
+  old = red bold
+  new = green bold
+  commit = yellow
+  whitespace = brightred reverse
+
+
+[color "grep"]
+  context = yellow
+  filename = green
+  function = magenta
+  lineNumber = cyan
+  column = blue bold
+  match = brightmagenta bold
+  matchContext = brightmagenta
+  matchSelected = brightblue 
+  selected = white
+  separator = blue
+
+[color "grep.matchSelected"]
+  grep = brightblue 
+  author = magenta
+  committer = green
+
+[color "grep.selected"]
+  grep = white 
+  author = magenta
+  committer = green
+
+[color "interactive"]
+  prompt = yellow
+  header = white
+  help = magenta reverse
+  error = red bold
+
+[color "push"]
+  error = red bold
+
+
+[color "remote"]
+  hint = cyan reverse
+  warning = brightred bold
+  success = green bold
+  error = red bold
+
+[color "status"]
+  header = magenta
+  added = green
+  changed = brightmagenta bold
+  untracked = magenta bold
+  deleted = red bold
+  branch = brightblue bold
+  nobranch = red bold
+  localBranch = brightblue bold
+  remoteBranch = yellow bold
+  unmerged = brightred
+
+[color "transport"]
+  rejected = red reverse

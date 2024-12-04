@@ -1,0 +1,11 @@
+#!bin/zsh
+
+function tex_tidybib(){
+  bibdir=$TEX_SETTINGS/bibtex/bib
+  bibfiles=$ENVDIR/bibs
+
+  for f in $(cat $bibfiles); do 
+    file=$bibdir/$f
+    bibtex-tidy -m --duplicates=key,citation --sort=author,organization,year,title --sort-fields=author,year,title,subtitle,shorttitle,editor,organization,address,journal,booktitle,volume,eid,issue,pages,month,publisher,city,doi,url,adsurl,adsnote,urldate,issn,keywords,abstract,note $file; 
+  done
+}

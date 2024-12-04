@@ -1,0 +1,6 @@
+#!bin/zsh
+
+# Add any file with definitions that is in the $ENVDIR
+function zsh_add_envfile() {
+  [ -f "$ENVDIR/$1" ] && source "$ENVDIR/$1"
+}

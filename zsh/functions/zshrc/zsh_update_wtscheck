@@ -1,0 +1,12 @@
+
+#!bin/zsh
+
+function zsh_update_wtscheck() {
+  zsh_tscheck $1 $2 $3
+  uf=$4
+  
+
+  if [ $delta -ge $interval ]; then
+    $uf
+  fi
+}

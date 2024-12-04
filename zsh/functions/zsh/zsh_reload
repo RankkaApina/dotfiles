@@ -1,0 +1,6 @@
+#!bin/zsh
+
+function zsh_reload() { 
+  unfunction ${MY_FUNCTIONS}/$1/*(:t)
+  autoload -Uz ${MY_FUNCTIONS}/$1/*(:t)
+}

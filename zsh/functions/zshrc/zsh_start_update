@@ -1,0 +1,13 @@
+#!bin/zsh
+
+function zsh_start_update() {
+  if [ ! -d $TSDIR ]; then
+    mkdir -p $TSDIR
+  fi
+  
+  zsh_update_wtscheck apt 3 d zsh_apt_update
+  #omp_update
+  zsh_update_wtscheck pip 26 w pyenv_update_pip
+  zsh_update_wtscheck gitpull 8 h git_multipull
+
+}

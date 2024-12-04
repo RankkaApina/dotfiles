@@ -1,0 +1,50 @@
+#!/bin/zsh
+
+#----------------------------------------------------------------
+# CUSTOMIZE COLORS HERE
+#----------------------------------------------------------------
+
+# define color theme: all other configurations are defined from this
+export THEME=nord
+
+#----------------------------------------------------------------
+# LISTING SHORTCUTS
+#----------------------------------------------------------------
+
+# Work environment doesn't have icons...
+alias els="eza -lA --icons --no-user --no-filesize"
+alias ess="eza -lA --icons --no-time --no-user --no-permissions --no-filesize"
+alias ell="eza -lAo --icons --no-user --git --group-directories-first"
+alias elm="eza -lAo --icons --no-user --git"
+alias elg="eza -lAo --icons --no-user --git --git-repos"
+
+#----------------------------------------------------------------
+# OTHER CONFIGS
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
+# CODING
+#----------------------------------------------------------------
+
+# adding .npm to path
+export PATH=~/.npm-global/bin:$PATH
+
+# Define vs code to use vs code insiders
+alias code='code-insiders'
+export VS_ROAM="Code - Insiders"
+export VS_DOT=".vscode-insiders"
+
+#----------------------------------------------------------------
+# FOLDER SHORTCUTS
+#----------------------------------------------------------------
+
+# Obsidian Notes
+alias adv='cd $VAULT/memory-beta-adventitious'
+alias books='cd $VAULT/memory-beta-books'
+alias crafts='cd $VAULT/memory-beta-crafts'
+alias hist='cd $VAULT/memory-beta-history'
+alias lang='cd $VAULT/memory-beta-languages'
+
+
+
+

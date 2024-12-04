@@ -1,0 +1,6 @@
+#!bin/zsh
+
+function zsh_autoload(){
+  export FPATH="$FPATH:${MY_FUNCTIONS}/$1"
+  autoload -Uz ${MY_FUNCTIONS}/$1/*(:t)
+}

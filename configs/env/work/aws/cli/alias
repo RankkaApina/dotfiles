@@ -1,0 +1,8 @@
+#----------------------------------------------------------------
+# AWS CLI ALIASES
+# Call: aws aliasname
+#----------------------------------------------------------------
+
+[toplevel]
+  whoami = sts get-caller-identity
+  whoami2 = sts get-caller-identity --query Account --output text

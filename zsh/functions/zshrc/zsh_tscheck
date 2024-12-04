@@ -1,0 +1,45 @@
+#!bin/zsh
+
+function zsh_tscheck() {
+  file=$1
+  i=$2
+  i_type=$3
+
+  if [ ! -f $TSDIR/$file-ts ]; then
+    touch $TSDIR/$file-ts
+    echo "0" > $TSDIR/$file-ts
+  fi
+
+  stamp=`cat $TSDIR/$file-ts`
+
+  if [ $i_type = "d" ]; then
+    now=$(date --date=$(date --iso-8601) +%s)
+    multiplier=$((60*60*24))
+    last_update=$(date --date=@$stamp -I)
+  elif [ $i_type = "w" ]; then
+    now=$(date --date=$(date --iso-8601) +%s)
+    multiplier=$((60*60*24*7))
+    last_update=$(date --date=@$stamp -I)
+  elif [ $i_type = "h" ]; then
+    now=$(date +%s)
+    multiplier=$((60*60))
+    last_update=$(date --date=@$stamp "+%F %T")
+  else 
+    echo "Please define interval type correctly!"
+    return 1
+  fi
+
+  # Find out delta
+  delta=$(($now-$stamp))
+
+  # Convert delta with multiplier
+  interval=$(($i*$multiplier))
+
+  #formatted_timestamp=$(date "+%F ${HT}%T%z${NS}")
+  formatted_timestamp=$(date "+%F %T")
+  formatted_delta=$(($delta/$multiplier))
+  file_up=$(echo $file | tr '[:lower:]' '[:upper:]')
+
+  echo "******************************************************\nTimestamp: $formatted_timestamp \n${HL} $file_up ${NS} \n${HT}Last update: $last_update \nInterval: $i $i_type \nDelta: $formatted_delta $i_type ${NS}\n******************************************************\n"
+
+}

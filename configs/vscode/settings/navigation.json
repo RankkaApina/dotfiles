@@ -1,0 +1,12 @@
+{
+  "explorer.autoOpenDroppedFile": false,
+  "explorer.autoReveal": "focusNoScroll",
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "outline.collapseItems": "alwaysCollapse",
+  "scm.compactFolders": false,
+  "workbench.activityBar.location": "bottom",
+  "workbench.editor.empty.hint": "hidden"
+}

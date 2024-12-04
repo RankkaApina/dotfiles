@@ -1,0 +1,8 @@
+#!bin/zsh
+
+# Remove file if exists: so that script doesn't error out
+function zsh_remove_file() {
+  if [ -f $1 ]; then
+    rm $1
+  fi
+}

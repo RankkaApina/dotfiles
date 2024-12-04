@@ -1,0 +1,6 @@
+#!bin/zsh
+
+function julia_install(){
+  export JULIAUP_DEPOT_PATH="$HOME/.local/bin/julia"
+  curl -fsSL https://install.julialang.org | sh -s -- -y
+}

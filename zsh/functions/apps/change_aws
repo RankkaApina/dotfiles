@@ -1,0 +1,5 @@
+#!bin/zsh
+
+function change_aws(){
+  export AWS_PROFILE=$1
+}

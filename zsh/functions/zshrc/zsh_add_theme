@@ -1,0 +1,34 @@
+#!bin/zsh
+
+# Adding all color definitions for the theme
+function zsh_add_theme() {
+  if [[ -z $THEME ]] || [[ ! -d $THEME_DIR/$THEME ]]; then 
+    export THEME=default
+  else
+    #ipython theme, default doesn't need to be defined
+    alias ipython="ipython --profile=$THEME"
+  fi
+  export COLOR_DIR=$THEME_DIR/$THEME
+
+  # terminal dircolors
+  if [[ ! -f $COLOR_DIR/dircolors ]]; then 
+    d=$THEME_DIR/default/dircolors
+  fi
+  d=$COLOR_DIR/dircolors
+  test -r $d && eval "$(dircolors $d)"
+  
+  # color definitions
+  if [[ ! -f $COLOR_DIR/colorenv ]]; then 
+    source "$THEME_DIR/default/colorenv"
+  else 
+    source "$COLOR_DIR/colorenv"
+  fi  
+  
+  # oh my posh theme
+  if [[ ! -f $COLOR_DIR/$env.omp.json ]]; then 
+    export ZSH_THEME="$THEME_DIR/default/$env.omp.json"
+  else 
+    export "ZSH_THEME=$COLOR_DIR/$env.omp.json"
+  fi
+  eval "$(oh-my-posh init zsh --config $ZSH_THEME)"
+}

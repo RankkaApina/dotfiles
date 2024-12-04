@@ -1,0 +1,11 @@
+#!bin/zsh
+
+function git_push() {
+  if [ -n "$1" ]
+    then
+      git_commit $1
+    else
+      git_commit
+  fi
+  git push
+}

@@ -1,0 +1,61 @@
+{
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "schemes": 
+  [
+    {
+      "name": "Fly Me to the Moon Light",
+
+      "background": "#fffced",
+      "foreground": "#03404a",
+
+      "selectionBackground": "#ddfff7",
+      "cursorColor": "#86acb3",
+
+      "black": "#03404a",
+      "blue": "#377194",
+      "cyan": "#0399b1",
+      "green": "#4dd9b8",
+      "purple": "#815991",
+      "red": "#be1333",
+      "white": "#fff7d3",
+      "yellow": "#e25e13",
+
+      "brightBlack": "#86acb3",
+      "brightBlue": "#45c0d0",
+      "brightCyan": "#93e1d8",
+      "brightGreen": "#ddfff7",
+      "brightPurple": "#aa4465",
+      "brightRed": "#ffa69e",
+      "brightWhite": "#fffced",
+      "brightYellow": "#ffad23"
+    },
+    {
+      "name": "Fly Me to the Moon Dark",
+  
+      "background": "#03404a",
+      "foreground": "#fffced",
+  
+      "selectionBackground": "#ffa69e",
+      "cursorColor": "#ddfff7",
+  
+      "black": "#03404a",
+      "blue": "#377194",
+      "cyan": "#0399b1",
+      "green": "#4dd9b8",
+      "purple": "#815991",
+      "red": "#be1333",
+      "white": "#fff7d3",
+      "yellow": "#e25e13",
+  
+      "brightBlack": "#86acb3",
+      "brightBlue": "#45c0d0",
+      "brightCyan": "#93e1d8",
+      "brightGreen": "#ddfff7",
+      "brightPurple": "#aa4465",
+      "brightRed": "#ffa69e",
+      "brightWhite": "#fffced",
+      "brightYellow": "#ffad23"
+    }
+  ]
+}

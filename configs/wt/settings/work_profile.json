@@ -1,0 +1,23 @@
+{
+  "defaultProfile": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+  "profiles": 
+  {
+    "defaults": 
+    {
+      "font": 
+      {
+        "face": "JetBrains Mono",
+        "size": 13.0
+      }
+    },
+    "list": 
+    [
+      {
+        "icon": "ms-appx:///ProfileIcons/{9acb9455-ca41-5af7-950f-6bca1bc9722f}.png",
+        "name": "Debian"
+      }
+    ]          
+  }
+}
+
+

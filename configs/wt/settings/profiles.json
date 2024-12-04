@@ -1,0 +1,31 @@
+{
+  "profiles": 
+  {
+    "defaults": 
+    {
+      "closeOnExit": "graceful",
+      "colorScheme": "Nord",
+      "experimental.retroTerminalEffect": false,
+      "intenseTextStyle": "bold",
+      "padding": "8, 8, 8, 20",
+      "suppressApplicationTitle": true,
+      "useAtlasEngine": false
+    },
+    "list": 
+    [
+      {
+        "colorScheme": "Nord",
+        "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Debian",
+        "name": "Debian",
+        "startingDirectory": "~",
+        "tabTitle": "Debian"
+      },
+      {
+        "hidden": true,
+        "name": "Azure Cloud Shell"
+      }
+    ]          
+  }
+}
+
+

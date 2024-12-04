@@ -1,0 +1,6 @@
+#!bin/zsh
+
+function pyenv_create_activate() {
+  pyenv virtualenv $1
+  pyenv activate $1
+}

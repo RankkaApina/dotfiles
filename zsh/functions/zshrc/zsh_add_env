@@ -1,0 +1,6 @@
+#!bin/zsh
+
+# Function to source environmental config files if they exist
+function zsh_add_env() {
+  [ -f "$ENVDIR/env" ] && source "$ENVDIR/env"
+}

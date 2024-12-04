@@ -1,0 +1,21 @@
+
+function zsh_recreate_symlinks() {
+  sudo -A ln -sfn $ZDOTDIR/etc_zshenv /etc/zsh/zshenv
+  ln -sfn $CONFIGS/git/ssh-config $HOME/.ssh/config
+  ln -sfn $ENVDIR/git/gitconfig $HOME/.gitconfig
+
+  if [ ! -d $HOME/.ipython/profile_default ]; then
+    mkdir -p $HOME/.ipython/profile_default
+  fi
+  ln -sfn $THEME_DIR/default/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
+
+  if [ ! -d $HOME/.ipython/profile_$THEME ]; then
+    mkdir -p $HOME/.ipython/profile_$THEME
+  fi
+  ln -sfn $COLOR_DIR/ipython_config.py $HOME/.ipython/profile_$THEME/ipython_config.py
+
+  if [[ -d $ENVDIR/aws ]]; then 
+    ln -sfn $ENVDIR/aws $HOME/.aws
+  fi
+}
+

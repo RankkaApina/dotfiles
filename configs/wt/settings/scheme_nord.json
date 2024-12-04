@@ -1,0 +1,57 @@
+{
+  "schemes": 
+    [
+      {
+        "name": "Nord",
+
+        "background": "#596682",
+        "foreground": "#D8DEE9",
+        "cursorColor": "#ECEFF4",
+        "selectionBackground": "#88C0D0",
+        
+        "black": "#3B4252",
+        "blue": "#81A1C1",
+        "cyan": "#8FBCBB",
+        "green": "#A3BE8C",
+        "purple": "#B48EAD",
+        "red": "#BF616A",
+        "white": "#E5E9F0",
+        "yellow": "#EBCB8B",          
+        
+        "brightBlack": "#5E81AC",
+        "brightBlue": "#86bbd8",
+        "brightCyan": "#88c0d0",
+        "brightGreen": "#84c24f",
+        "brightPurple": "#ed8aaf",
+        "brightRed": "#D08770",
+        "brightWhite": "#ECEFF4",
+        "brightYellow": "#e4b860"
+      },
+      {
+        "name": "Nord Light",   
+        
+        "background": "#F6F7F8",
+        "foreground": "#434C5E",
+        "cursorColor": "#ECEFF4",
+        "selectionBackground": "#88C0D0",
+
+        "black": "#3B4252",
+        "blue": "#81A1C1",
+        "cyan": "#8FBCBB",
+        "green": "#A3BE8C",
+        "purple": "#B48EAD",
+        "red": "#BF616A",
+        "white": "#E5E9F0",
+        "yellow": "#E0A52B",
+
+        "brightBlack": "#5E81AC",
+        "brightBlue": "#86bbd8",
+        "brightCyan": "#88c0d0",
+        "brightGreen": "#84c24f",
+        "brightPurple": "#ed8aaf",
+        "brightRed": "#D08770",
+        "brightWhite": "#ECEFF4",
+        "brightYellow": "#e4b860"
+        }
+    ]
+}

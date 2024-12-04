@@ -1,0 +1,14 @@
+#!bin/zsh
+
+function python_install_reqs() {
+  # pip install -r $PY_REQS/base.txt
+  if [ $1 = "pip" ]; then
+    iarg="-r"
+  elif [ $1 = "conda" ]; then
+    iarg="--file"
+  else
+    echo "Please give valid installation tool."
+  fi
+
+  $1 install $iarg $PY_REQS/$2.txt
+}

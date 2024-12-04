@@ -1,0 +1,123 @@
+# ---------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
+# COMMON CONFIGURATIONS
+# ---------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------------
+# Fixing WSL Dubious Ownership
+# ---------------------------------------------------------------------------------
+
+[safe]
+	directory = *
+
+# ---------------------------------------------------------------------------------
+# DEFAULT MAIN BRANCH
+# -------------------
+# Currently I set the default branch here, but if working with other people, 
+# this might need to be set in the user-files 
+# -> I can define the project that the repo is under also, or even individual repos
+# Although for individual repos, it might make sense to use git config --local
+# ---------------------------------------------------------------------------------
+
+[init]
+	defaultBranch = alpha
+
+[core]
+	filemode = false
+
+# ---------------------------------------------------------------------------------
+# REMOTE REPOSITORY COMMUNICATION SETTINGS
+# ---------------------------------------------------------------------------------
+
+[pull]
+  rebase = true
+	
+[rebase]
+	autoStash = true
+
+[fetch]
+  prune = true
+
+[reset]
+	quiet = true
+
+# ---------------------------------------------------------------------------------
+# COLOR
+# ---------------------------------------------------------------------------------
+
+[include]
+  path = ~/projects/dotfiles/configs/git/gitcolor
+
+# ---------------------------------------------------------------------------------
+# LOGS 
+# ---------------------------------------------------------------------------------
+
+[log]
+	date = iso8601-strict
+
+# Custom pretty formats
+
+[pretty]
+	mf = format:%C(green)%C(bold)%aI%Creset%   %C(yellow)%h% %C(magenta): %-C(red)%d%Creset %s% %C(cyan)[%cn]
+	mfnc = format:%C(green)%ad%  %C(yellow)%h%  %-C(red)%d%Creset %s% %x09%C(cyan)[%cn]
+	mf2line = format:%C(green)%aI%   %C(yellow)%h%   %C(cyan)[%cn]%  %-C(red)%d%Creset%n%x09%s
+
+  #test = format:%C(03)%>|(26)%h  %C(green)%C(bold)%aI%  %C(cyan)| %<(12,trunc)%cn |%C(reset)  %C(bold 1)%d%C(reset) %C(bold 0)%>|(1)%s%C(reset)
+	col = format:%>|(34)%C(green)%C(bold)%aI%  %C(yellow)%h %C(magenta)| %<(12,trunc)%C(cyan)%cn %C(magenta)|  %-C(red)%d%Creset %n%%s
+  
+  pld = format:%C(magenta)%d%n %C(brightgreen)%as %C(yellow)%h %Creset%s%C(cyan)[%cn]
+
+
+[column]
+  ui = always
+
+# ---------------------------------------------------------------------------------
+# ALIASES
+# ---------------------------------------------------------------------------------
+
+[alias]
+
+	# -------------------------------------------------------------------------------
+	# Standard commands
+	# -------------------------------------------------------------------------------
+
+	co = checkout
+	ci = commit -S -m
+	st = status --short --branch
+	rs = restore --staged .
+	ups = !git push -u origin HEAD
+
+	# -------------------------------------------------------------------------------
+	# Logs
+	# -------------------------------------------------------------------------------
+
+	# my default logs, zsh alias: gh
+	hist = log --graph --all --topo-order --pretty=format:'%C(green)%aI%Creset%  %C(yellow)%h% %-C(auto)%d%Creset %s %C(cyan)[%cn]' --name-only
+
+  # last commit in the current branch
+	last = log --graph --all --topo-order --pretty=format:'%C(green bold)%aI%Creset%  %C(yellow)%h%Creset %-C(auto)%d%Creset %s %C(cyan)[%cn]' -1 HEAD
+
+  # last work commit
+  wlast = log --graph --all --topo-order --pretty=format:'%C(green bold)%aI%Creset%  %C(yellow)%h%Creset %-C(auto)%d%Creset %s %C(cyan)[%cn]' -1 HEAD --author='Anna Parikka'
+
+  # last home commit
+  hlast = log --graph --all --topo-order --pretty=format:'%C(green bold)%aI%Creset%  %C(yellow)%h%Creset %-C(auto)%d%Creset %s %C(cyan)[%cn]' -1 HEAD --grep='HOME'
+  
+
+	# zsh alias: gls
+	ls = log --graph --all --topo-order --pretty=format:'%C(brightgreen)%aI%Creset%   %C(yellow)%h%Creset  %s  %C(magenta)%d%Creset  %C(cyan)[%cn]'
+
+	# test 
+	#l = log --graph --abbrev-commit --decorate=no --format=col --all
+
+	# -------------------------------------------------------------------------------
+	# Other useful shortcuts
+	# -------------------------------------------------------------------------------
+
+	# list branches sorted by last modified
+  b = "!git for-each-ref --sort='-authordate' --format='%1B[0;32m%(authordate)%1B[m%09%1B[0;33m%(objectname:short)%1B[m%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+	
+	# list git aliases
+  la = "!git config -l | grep alias | cut -c 7-"
+	

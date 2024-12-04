@@ -1,0 +1,14 @@
+#!bin/zsh
+
+function git_path() {
+  if [ -n "$3" ]; then
+    gitpath="git@git"$1".com:$3/$2.git"
+  elif [ -n "$2" ]; then
+    gitpath="git@git"$1".com:RankkaApina/$2.git"
+  else
+    echo "Check the arguments:"
+    echo "1. lab/hub"
+    echo "2. repo"
+    echo "3. owner (if not RankkaApina)"
+  fi
+}

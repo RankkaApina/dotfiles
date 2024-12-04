@@ -1,0 +1,8 @@
+#!bin/zsh
+
+function zsh_install_packlist() {
+  PACKLIST=$REQS/$1
+  for i in $(cat $PACKLIST); do 
+    sudo -A apt install -y $i; 
+  done
+}

@@ -1,0 +1,125 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "final_space": true,
+  "version": 2,
+  "palette": {
+    "nord0": "#2E3440", 
+    "nord1": "#3B4252", 
+    "nord2": "#434C5E", 
+    "nord3": "#4C566A", 
+    "nord4": "#D8DEE9", 
+    "nord5": "#E5E9F0", 
+    "nord6": "#ECEFF4", 
+    "nord7": "#8FBCBB", 
+    "nord8": "#88C0D0", 
+    "nord9": "#81A1C1", 
+    "nord10": "#5E81AC", 
+    "nord11": "#BF616A", 
+    "nord12": "#D08770",  
+    "nord13": "#EBCB8B", 
+    "nord14": "#A3BE8C",  
+    "nord15": "#B48EAD",  
+    "dark-violet": "#9A348E", 
+    "rose": "#DA627D", 
+    "peach": "#FCA17D", 
+    "sky": "#86BBD8", 
+    "teal": "#33658A" 
+},
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "p:nord6",
+          "foreground": "p:nord2",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " \uf0e7 ",
+          "type": "root"
+        },
+        {
+          "background": "p:nord15",
+          "foreground": "p:nord6",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " {{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "background": "p:nord14",
+          "foreground": "p:nord6",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "home_icon": "\u24bd",
+            "mapped_locations": {
+              "~/projects": "\u2039\u2044\u203a",
+              "~/projects/memory-alpha": "Memory Alpha",
+              "~/projects/memory-alpha/memory-beta-space": "Memory Beta Space",
+              "~/projects/memory-alpha/memory-beta-tech": "Memory Beta Tech",
+              "~/projects/osc": "OSC",
+              "~/projects/osc/tex": "TeX",
+              "/mnt/c/Users/Anna.Parikka": "\u058D",
+              "/mnt/c/Users/Anna.Parikka/Downloads": "\u1401"
+            },
+            "folder_separator_icon": " > "
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "type": "python",
+          "style": "powerline",
+          "background": "p:nord13",
+          "foreground": "p:nord6",
+          "powerline_symbol": "\ue0b0",
+          "template": " Python {{ .Full }} {{ if .Env.CONDA_DEFAULT_ENV }}({{ .Env.CONDA_DEFAULT_ENV }}) {{ else if .Venv }} ({{ .Venv }}) {{ end }} ",
+          "properties": { 
+            "home_enabled": true,
+            "display_mode": "always",
+            "display_default": true
+          }
+        },
+        {
+          "background": "p:nord12",
+          "foreground": "p:nord6",
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " ({{ .HEAD }}) ",
+          "type": "git"
+        },
+        {
+          "background": "p:nord11",
+          "foreground": "p:nord6",
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b0",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "p:nord8",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}p:rose{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ]
+}

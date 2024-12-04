@@ -1,0 +1,23 @@
+{
+  "defaultProfile": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+  "profiles": 
+  {
+    "defaults": 
+    {
+      "font": 
+      {
+        "face": "Hasklug Nerd Font",
+        "size": 13.0
+      }
+    },
+    "list": 
+    [
+      {
+        "icon": "C:\\Users\\anna\\Pictures\\icons\\linux.ico",
+        "name": "Debian"
+      }
+    ]          
+  }
+}
+
+

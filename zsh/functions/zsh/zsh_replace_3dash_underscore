@@ -1,0 +1,9 @@
+#!bin/zsh
+
+# Function to replace 3 dashes with underscore
+function zsh_replace_3dash_underscore() {
+  for file in *'---'*
+    do
+    mv -- "$file" "${file//---/_}"
+  done
+}

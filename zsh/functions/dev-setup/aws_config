@@ -1,0 +1,6 @@
+#!bin/zsh
+
+function aws_config() {
+  ln -sfn $ENVDIR/aws/config $HOME/.aws/config
+  ln -sfn $ENVDIR/aws/credentials $HOME/.aws/credentials
+} 

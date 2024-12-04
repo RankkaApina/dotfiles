@@ -1,0 +1,7 @@
+#!bin/zsh
+
+function zsh_load_plugins() {
+  for i in $(cat $PLUGINLIST); do 
+    zsh_plugin_load $i; 
+  done
+}

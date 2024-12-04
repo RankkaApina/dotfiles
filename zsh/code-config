@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+#----------------------------------------------------------------
+# PYTHON
+#----------------------------------------------------------------
+
+# python packages to install
+export PY_REQS=$DOT/reqs/python
+# my personal code snippets to path
+export PYTHONPATH="$CODE_DIR/python:$PYTHONPATH"
+
+#PYENV
+export PYENV_ROOT=~/.pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+#----------------------------------------------------------------
+# JS & NODE
+#----------------------------------------------------------------
+# This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
+
+export NODE_REPL_HISTORY=$LOGS
+
+#----------------------------------------------------------------
+# Julia
+#----------------------------------------------------------------
+export JULIAUP_DEPOT_PATH="$HOME/.local/bin/julia"
+export PATH="$PATH:$HOME/.juliaup/bin"

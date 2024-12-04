@@ -1,0 +1,9 @@
+{
+  "workbench.colorCustomizations": {
+    "[Nord Light]": {
+      "editor.background": "#ECEFF4",
+      "textBlockQuote.background": "#8FBCBB",
+      "textCodeBlock.background": "#88C0D0"
+    }
+  }
+}

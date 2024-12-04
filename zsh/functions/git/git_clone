@@ -1,0 +1,16 @@
+#!bin/zsh
+
+function git_clone() {
+  if [ -n "$3" ]; then
+    git_path $1 $2 $3
+    git clone $gitpath
+  elif [ -n "$2" ]; then
+    git_path $1 $2
+    git clone $gitpath
+  else
+    echo "Check the arguments:"
+    echo "1. lab/hub"
+    echo "2. repo"
+    echo "3. owner (if not RankkaApina)"
+  fi
+}

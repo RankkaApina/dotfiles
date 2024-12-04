@@ -1,0 +1,9 @@
+#!bin/zsh
+
+# Function to replace spaces with underscores
+function zsh_replace_space_underscore() {
+  for file in *' '*
+    do
+    mv -- "$file" "${file// /_}"
+  done
+}

@@ -1,0 +1,3 @@
+export HL='\e[46m\e[37m'
+export HT='\e[36m'
+export NS='\e[0m'

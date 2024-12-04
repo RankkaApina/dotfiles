@@ -1,0 +1,17 @@
+#!/bin/zsh
+
+# Upgrade pip for all python versions installed
+function pyenv_update_pip() {
+  if [ ! -f $TSDIR/pip-ts ]; then
+    touch $TSDIR/pip-ts
+    echo "0" > $TSDIR/pip-ts
+  fi
+
+  for VERSION in $(pyenv versions --bare) ; do
+    pyenv shell ${VERSION} ;
+    pip install --upgrade pip;
+  done
+  
+  updated=$(date --date=$(date --iso-8601) +%s 2>/dev/null)
+  echo "$updated" > $TSDIR/pip-ts
+}

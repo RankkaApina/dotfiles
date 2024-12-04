@@ -1,0 +1,30 @@
+#!/bin/zsh
+#   Source: https://askubuntu.com/a/1171740
+# 
+#   This file echoes a bunch of color codes to the
+#   terminal to demonstrate what's available.  Each
+#   line is the color code of one forground color,
+#   out of 17 (default + 16 escapes), followed by a
+#   test use of that color on all nine background
+#   colors (default + 8 escapes).
+#
+#   Copied from http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html
+
+function  zsh_term_bcolors(){
+  T='gYw'   # The test text
+  echo -e "\n                100m    101m    102m    103m\
+    104m    105m    106m    107m";
+
+  for FGs in '    m' '   1m' '  90m' '1;90m' '  91m' '1;91m' '  92m' \
+           '1;92m' '  93m' '1;93m' '  94m' '1;94m' '  95m' '1;95m' \
+           '  96m' '1;36m' '  97m' '1;97m';
+    do FG=${FGs// /}
+      echo -en " $FGs \033[$FG  $T  "
+      for BG in 100m 101m 102m 103m 104m 105m 106m 107m;
+        do echo -en "$EINS \033[$FG\033[$BG  $T  \033[0m";
+      done
+    echo;
+  done
+  echo
+}
+

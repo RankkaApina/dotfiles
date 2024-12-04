@@ -1,0 +1,20 @@
+#!bin/zsh
+
+#--------------------------------------------------------------------
+# NOTE for GitHub: 
+# github cli needs to be installed for github repo creation
+# 3rd argument "public" or "private" is required!
+#--------------------------------------------------------------------
+
+# If folder is on Windows side add following before running the function:
+# git config --global --add safe.directory /mnt/c/Users/anna/PATHTOFOLDER
+
+
+function git_new_repo(){
+  if [ "$1"=="hub" ]; then
+    gh repo create $2 --$3
+  fi
+  git init
+  git remote add origin git@git$1.com:RankkaApina/$2.git
+  git_push_upstream "Initial commit"
+}

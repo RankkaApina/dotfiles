@@ -1,0 +1,12 @@
+#!bin/zsh
+
+# Push a new branch: also sets the branch upstream if you created a new local branch
+function git_push_upstream() {
+  if [ -n "$1" ]
+    then
+      git_commit $1
+    else
+      git_commit
+  fi
+	git push -u origin HEAD
+}

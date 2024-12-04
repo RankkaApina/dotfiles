@@ -1,0 +1,5 @@
+pipdeptree
+ipython
+openpyxl
+requests
+numpy

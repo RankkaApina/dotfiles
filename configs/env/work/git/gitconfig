@@ -1,0 +1,37 @@
+# ---------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
+# USER/PROJECT SPECIFIC CONFIGURATIONS
+# ---------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------
+
+[user]
+	name = MYNAME
+  email = MYEMAIL
+
+# ---------------------------------------------------------------------------------
+# USER PROFILES
+# ---------------------------------------------------------------------------------
+# This chooses which settings to apply based on remote branch
+# Note: includeIf only works from git 2.36 ->
+# ---------------------------------------------------------------------------------
+
+[includeIf "hasconfig:remote.*.url:git@github.com:**/**"]
+  path = ~/projects/dotfiles/configs/git/work/work-github
+
+[includeIf "hasconfig:remote.*.url:https://github.com/**/**"]
+  path = ~/projects/dotfiles/configs/git/work/work-github
+
+[includeIf "hasconfig:remote.*.url:git@gitlab.com:**/**"]
+  path = ~/projects/dotfiles/configs/git/work/work-gitlab
+
+[includeIf "hasconfig:remote.*.url:https://gitlab.com/**/**"]
+  path = ~/projects/dotfiles/configs/git/work/work-gitlab
+
+
+# ---------------------------------------------------------------------------------
+# INCLUDE COMMON CONFIGURATIONS
+# ---------------------------------------------------------------------------------
+
+[include]
+  path = ~/projects/dotfiles/configs/git/gitconfig
+

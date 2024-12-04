@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+# THIS IS FOR ANY ENV SPECIFIC COMMANDS THAT NEED TO BE 
+# AT THE END OF .zshrc
+
+#----------------------------------------------------------------
+# AWS
+#----------------------------------------------------------------
+
+# aws tab completion 
+# guide: https://docs.aws.amazon.com/cli/v1/userguide/cli-configure-completion.html
+# NOTE: compinit is added in .zshrc in general
+#----------------------------------------------------------------
+
+# add aws_completer to path
+export PATH="/usr/libexec/aws_completer:$PATH"
+
+# autoload bashcompinit
+# see: https://docs.haskellstack.org/en/v1.0.2/shell_autocompletion/
+autoload -U +X bashcompinit && bashcompinit
+eval "$(stack --bash-completion-script stack)"
+
+# Enable command completion (use the built-in command complete)
+complete -C '/usr/libexec/aws_completer' aws

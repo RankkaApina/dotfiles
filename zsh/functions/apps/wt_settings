@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+function wt_settings(){
+  python $CODE_DIR/python/wt_settings.py $ENVDIR/wt $WT_INPUT $WT_SETTINGS
+  cp -f $WT_SETTINGS $WT_DIR/settings.json
+}

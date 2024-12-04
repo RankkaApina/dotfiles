@@ -1,0 +1,12 @@
+#!bin/zsh
+
+# Update apt
+function zsh_apt_update {
+  if [ ! -f $TSDIR/apt-ts ]; then
+    touch $TSDIR/apt-ts
+    echo "0" > $TSDIR/apt-ts
+  fi
+  sudo -A apt update && sudo -A apt upgrade -y && sudo -A apt autoremove -y
+  updated=$(date --date=$(date --iso-8601) +%s 2>/dev/null)
+  echo "$updated" > $TSDIR/apt-ts
+}

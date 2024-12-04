@@ -1,0 +1,16 @@
+#!bin/zsh
+
+function git_multipush() {
+  loc=${$(pwd)}
+  for i in $(cat $PUSH_REPOS); do 
+    cd $PROJ/$i
+    echo "******************************************************\n"${HL} $i ${NS}
+    if [ -n "$1" ]; then
+      git_push $1
+    else
+      git_push
+    fi
+    echo "******************************************************\n"
+  done
+  cd $loc
+}

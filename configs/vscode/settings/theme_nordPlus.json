@@ -1,0 +1,12 @@
+{
+  "editor.tokenColorCustomizations": {
+    "[Nord+]": {
+      "activityBar.background": "#596682",
+      "comments": "#86bbd8",
+      "editor.background": "#596682",
+      "sideBar.background": "#596682",
+      "sideBar.border": "#88c0d000",
+      "terminal.background": "#596682"
+    }
+  }
+}

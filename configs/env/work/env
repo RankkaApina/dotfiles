@@ -1,0 +1,53 @@
+#!/bin/zsh
+
+#----------------------------------------------------------------
+# CUSTOMIZE COLORS HERE
+#----------------------------------------------------------------
+
+# dircolors file
+export THEME=nord
+
+#----------------------------------------------------------------
+# LISTING SHORTCUTS
+#----------------------------------------------------------------
+
+# Work environment doesn't have icons...
+alias els="eza -lA --no-user --no-filesize"
+alias ess="eza -lA --no-time --no-user --no-permissions --no-filesize"
+alias ell="eza -lAo --no-user --git --group-directories-first"
+alias elm="eza -lAo --no-user --git"
+alias elg="eza -lAo --no-user --git --git-repos"
+
+#----------------------------------------------------------------
+# AWS
+# NOTE: aws autocompletion is set up at env_lastcommands file
+#----------------------------------------------------------------
+
+# Default profile
+export AWS_PROFILE=osc
+
+# Buckets
+
+
+# Commands
+alias als="aws s3 ls"
+alias alsr="aws s3 ls --recursive"
+alias arm="aws s3 rm --recursive"
+alias amv="aws s3 mv --recursive"
+
+#----------------------------------------------------------------
+# CODING
+#----------------------------------------------------------------
+
+# VS Code settings
+export VS_ROAM="Code"
+export VS_DOT=".vscode"
+
+#----------------------------------------------------------------
+# FOLDER SHORTCUTS
+#----------------------------------------------------------------
+
+alias osc="cd $PROJ/osc"
+alias a2="cd $PROJ/osc/a2-iooe"
+alias cara="cd $PROJ/osc/cara-analysis-tools"
+alias tt="cd $PROJ/osc/tracss-tools"

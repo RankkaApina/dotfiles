@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+function vs_settings(){
+  python $CODE_DIR/python/vs_settings.py $ENVDIR/vscode $VS_INPUT $VS_USER_SETTINGS
+  cp -f $VS_USER_SETTINGS $VS_USER/settings.json
+  cp -f $VS_KEYBINDINGS $VS_USER/keybindings.json
+}
+

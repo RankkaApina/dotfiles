@@ -1,0 +1,6 @@
+#!bin/zsh
+
+function git_add_hosts() {
+  ssh-keyscan -H git$1.com >> ~/.ssh/known_hosts
+  echo "SSH keys for Git$1 added to known hosts!"
+}

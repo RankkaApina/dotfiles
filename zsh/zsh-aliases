@@ -1,0 +1,201 @@
+#!/bin/zsh
+
+#----------------------------------------------------------------
+# FUNCTIONALITY
+#----------------------------------------------------------------
+
+# System options
+alias cd..="cd .."
+alias sudo="sudo -A"
+
+# Easier folder creation and removal
+alias md='mkdir -p'
+alias rd=rmdir
+
+# Installs
+alias apti="sudo DEBIAN_FRONTEND=noninteractive apt install -y"
+
+# Shortcuts for vs code to open in specific folders
+alias vs="code $PROJ"
+alias vsh="code $HOME"
+
+# Shortcuts to generate windows terminal and vs code user settings
+alias vss="vs_settings"
+alias wts="wt_settings"
+
+# Upgrade pip for one installation of python, 
+# if want to do for all, then use pyenv_update_pip
+alias upp="pip install --upgrade pip"
+
+# Get timestamp for now
+alias ts="date $TIME_STYLE"
+# Alias for timestamped history
+
+alias tshistory="history -t '%FT%T%z'"
+alias histo="history -100"
+
+
+#----------------------------------------------------------------
+# ALIASES FOR WINDOWS APP USAGE
+#----------------------------------------------------------------
+
+# Execute MiKTeX commands from WSL
+alias miktex="cmd.exe /c 'miktex.exe'"
+#alias miktex="$whome/AppData/Local/Programs/MiKTeX/miktex/bin/x64/initexmf.exe"
+
+
+# Refresh MiKTeX filename database
+alias mtdb="miktex fndb refresh"
+
+alias wt="cmd.exe /c 'wt.exe'"
+
+#----------------------------------------------------------------
+# EDIT AND RELOAD ZSH START-UP FILES
+#----------------------------------------------------------------
+
+alias ealias="nano $ZDOTDIR/zsh-aliases"
+alias eenv="nano $ENVDIR/env"
+alias ezsh="nano $ZDOTDIR/.zshrc"
+
+alias rezsh="exec zsh && echo 'zsh reloaded'"
+
+#----------------------------------------------------------------
+# LISTING SHORTCUTS
+#----------------------------------------------------------------
+
+# easier to read disk
+alias df="df -h"     # human-readable sizes
+
+# listing shortcuts
+alias ss="ls -B1sh --color=always --group-directories-first"
+alias ls="ls -1 --color=always --group-directories-first"
+alias ll="ls -lGAv --color=always --group-directories-first" #will sort dots first, but capital letters come before lowercase
+alias lli="ls -lGA --color=always --group-directories-first" #will sort capital and lowercase correctly
+
+#----------------------------------------------------------------
+# GREP
+#----------------------------------------------------------------
+
+# Colorize grep output (good for log files)
+alias grep="grep --color=auto"
+alias egrep="egrep --color=auto"
+alias fgrep="fgrep --color=auto"
+
+#----------------------------------------------------------------
+# FOLDER SHORTCUTS
+#----------------------------------------------------------------
+
+# My common folders
+alias pro="cd $PROJ"
+alias dot="cd $DOT" 
+alias alpha="cd $VAULT"
+alias tech="cd $VAULT/memory-beta-tech"
+alias space="cd $VAULT/memory-beta-space"
+alias tex='cd $PROJ/tex'
+alias latex='cd $PROJ/tex/_latex'
+
+#----------------------------------------------------------------
+# CODING
+#----------------------------------------------------------------
+
+# PYTHON
+#----------------------------------------------------------------
+
+# Python install aliases
+#----------------------------------------------------------------
+
+alias pp="python_install_reqs pip"
+alias pc="python_install_reqs conda"
+
+# Requirements
+alias pipr="pip install -r requirements.txt"
+
+# Basics
+alias pipb="python_install_reqs pip base"
+
+# Specific lists
+alias pipw="python_install_reqs pip work"
+alias pipd="python_install_reqs pip data"
+alias pipastro="python_install_reqs pip data && python_install_reqs pip astro"
+
+# If conda
+alias cob="python_install_reqs conda base"
+
+# Python environment control
+#----------------------------------------------------------------
+alias deac="source deactivate"
+
+
+# TeX
+#----------------------------------------------------------------
+alias tidybib="bibtex-tidy -m --duplicates=key,citation --sort=author,organization,year,title --sort-fields=author,year,title,subtitle,shorttitle,editor,organization,address,journal,booktitle,volume,eid,issue,pages,month,publisher,city,doi,url,adsurl,adsnote,urldate,issn,keywords,abstract,note"
+
+#----------------------------------------------------------------
+# GIT ALIASES
+#----------------------------------------------------------------
+
+# Standard options
+#----------------------------------------------------------------
+
+alias gs="git fetch && git st"
+alias gpr="git pull --rebase --autostash"
+alias ga="git add ."
+alias gco="git co"
+alias gac="ga && gc"
+alias go="git remote show origin"
+alias grh="git reset --hard HEAD"
+alias gr="git reset HEAD\^"
+alias gc="git clone"
+
+# Git Logs
+#----------------------------------------------------------------
+
+# show all files tracked by git in your current branch
+alias glst="git ls-tree --full-tree -r HEAD" 
+
+# log with long timestamp and timezone and list of changed files
+alias ghi="git hist" 
+# like ghi, but no file list
+alias gls="git ls" 
+
+# Single file
+alias glf="git log --follow -p --pretty=mf" #add filename! -> file log full with diff
+alias ghf="git log --follow  --pretty=mf" #add filename! in gh format 
+
+#----------------------------------------------------------------
+# FUNCTION ALIASES
+#----------------------------------------------------------------
+
+# General zsh
+alias rcsymlinks="zsh_recreate_symlinks"
+alias col="zsh_check_colors"
+alias bcol="zsh_check_bright_colors"
+alias rmf="zsh_remove_file"
+alias rmd="zsh_remove_dir"
+alias rp_su="zsh_replace_space_underscore"
+alias rp_3u="zsh_replace_3dash_underscore"
+alias rp_ud="zsh_replace_underscore_dash"
+
+# Git related
+alias gcl="git_clone"
+alias gp="git_push"
+alias gcm="git_commit"
+alias gmp="git_multipush"
+alias gmpl="git_multipull"
+alias gups="git_push_upstream"
+alias gnew="git_new_repo"
+alias glnew="git_new_repo lab"
+alias ghnew="git_new_repo hub" # NOTE: for GitHub you need to create the project in browser first
+
+# Setup mainly
+alias gitlab_ssh="git_create_sshkey lab"
+alias github_ssh="git_create_sshkey hub"
+alias install_list="zsh_install_packlist"
+
+
+#----------------------------------------------------------------
+# PYTHON SCRIPT ALIASES
+#----------------------------------------------------------------
+
+alias pjson="python $CODE_DIR/python/pretty_json.py"
+alias sjson="python $CODE_DIR/python/sort_json.py"

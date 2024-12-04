@@ -1,0 +1,24 @@
+#!bin/zsh
+
+function git_multipull() {
+  if [ ! -f $TSDIR/gitpull-ts ]; then
+    touch $TSDIR/gitpull-ts
+    echo "0" > $TSDIR/gitpull-ts
+  fi
+  loc=${$(pwd)}
+  for i in $(cat $COMMON_REPOS); do 
+    cd $PROJ/$i
+    echo "******************************************************\n"${HL} $i ${NS}
+    git pull --rebase --autostash
+    echo "******************************************************\n"
+  done
+  for i in $(cat $PULL_REPOS); do 
+    cd $PROJ/$i
+    echo "******************************************************\n"${HL} $i ${NS}
+    git pull --rebase --autostash
+    echo "******************************************************\n"
+  done
+  updated=$(date +%s)
+  echo "$updated" > $TSDIR/gitpull-ts
+  cd $loc
+}

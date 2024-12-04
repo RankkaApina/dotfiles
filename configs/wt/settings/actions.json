@@ -1,0 +1,9 @@
+{
+  "actions": 
+  [
+      {
+          "command": "find",
+          "keys": "ctrl+f"
+      }
+  ]
+}

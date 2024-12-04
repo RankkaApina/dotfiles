@@ -1,0 +1,11 @@
+{
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.detectIndentation": false,
+  "editor.fontLigatures": true,
+  "editor.formatOnPaste": false,
+  "editor.minimap.enabled": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on"
+}

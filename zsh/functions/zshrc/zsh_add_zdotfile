@@ -1,0 +1,6 @@
+#!bin/zsh
+
+# Add any file with definitions that is in the $ZDOTDIR
+function zsh_add_zdotfile() {
+  [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
+}

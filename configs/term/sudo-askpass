@@ -1,0 +1,2 @@
+#!/bin/zsh
+pass show hosts/$(whoami)@$(hostname) | head -n1

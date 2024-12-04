@@ -1,0 +1,127 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "dark-violet": "#9A348E",
+    "nord0": "#2E3440",
+    "nord1": "#3B4252",
+    "nord10": "#5E81AC",
+    "nord11": "#BF616A",
+    "nord12": "#D08770",
+    "nord13": "#EBCB8B",
+    "nord14": "#A3BE8C",
+    "nord15": "#B48EAD",
+    "nord2": "#434C5E",
+    "nord3": "#4C566A",
+    "nord4": "#D8DEE9",
+    "nord5": "#E5E9F0",
+    "nord6": "#ECEFF4",
+    "nord7": "#8FBCBB",
+    "nord8": "#88C0D0",
+    "nord9": "#81A1C1",
+    "peach": "#FCA17D",
+    "rose": "#DA627D",
+    "sky": "#86BBD8",
+    "teal": "#33658A"
+  },
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "style": "diamond",
+          "leading_diamond": "\ue0b6",
+          "template": "{{ .UserName }} ",
+          "foreground": "p:nord6",
+          "background": "p:nord15",
+          "type": "session"
+        },
+        {
+          "properties": {
+            "folder_separator_icon": " ❯ ",
+            "home_icon": "\uf015 ",
+            "mapped_locations": {
+              "~/projects": "\ueac4  projects",
+              "~/projects/memory-alpha": "\udb82\udd07  Memory Alpha",
+              "~/projects/memory-alpha/memory-beta-adventitious": "\uf483  Memory Beta Adventitious",
+              "~/projects/memory-alpha/memory-beta-books": "\uf02d  Memory Beta Books",
+              "~/projects/memory-alpha/memory-beta-crafts": "\uf0c4  Memory Beta Crafts",
+              "~/projects/memory-alpha/memory-beta-history": "\uf4ed  Memory Beta History",
+              "~/projects/memory-alpha/memory-beta-languages": "\udb81\uddca  Memory Beta Languages",
+              "~/projects/memory-alpha/memory-beta-space": "\uf427  Memory Beta Space",
+              "~/projects/memory-alpha/memory-beta-tech": "\udb80\udd8d  Memory Beta Tech",
+              "~/projects/tex": "\ue69b  TeX",
+              "~/projects/tex/_latex": "\ue69b  LaTeX",
+              "~/projects/tex/mhk": "\ue69b  TeX ❯ MHK"
+            },
+            "style": "agnoster_full"
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} ",
+          "foreground": "p:nord6",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:nord14",
+          "type": "path"
+        },
+        {
+          "properties": {
+            "display_default": true,
+            "display_mode": "always",
+            "home_enabled": true
+          },
+          "style": "powerline",
+          "template": " \ue235  {{ .Full }} {{ if .Env.CONDA_DEFAULT_ENV }}({{ .Env.CONDA_DEFAULT_ENV }}) {{ else if .Venv }} ({{ .Venv }}) {{ end }} ",
+          "foreground": "p:nord6",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:nord13",
+          "type": "python"
+        },
+        {
+          "properties": {
+            "branch_icon": "",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " {{ .UpstreamIcon }}({{ .HEAD }}){{ if .Working.Changed }} \uef4f {{else}} ♥ {{ end }}",
+          "foreground": "p:nord6",
+          "powerline_symbol": "\ue0b0",
+          "background": "p:nord12",
+          "type": "git"
+        },
+        {
+          "properties": {
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "trailing_diamond": "\ue0b0",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "foreground": "p:nord6",
+          "background": "p:nord11",
+          "type": "time"
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "❯ ",
+          "foreground": "p:nord8",
+          "type": "status",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}p:rose{{ end }}"
+          ]
+        }
+      ],
+      "newline": true
+    }
+  ],
+  "version": 3,
+  "final_space": true
+}

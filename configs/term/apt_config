@@ -1,0 +1,14 @@
+APT {
+  Get {
+    Assume-Yes "true";
+    Fix-Broken "true";
+  };
+  Color "1";
+};
+Dpkg {
+  Progress-Fancy {
+    progress-fg "\e[30m";
+    progress-bg "\e[42m";
+    progress-bar "true";
+  }
+};
